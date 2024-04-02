@@ -6,13 +6,13 @@ position: "Técnico Superior"
 address: "Instituto Português do Mar e da Atmosfera"
 phone: 915578419
 #pronouns: "he/him"
-#www: "https://www.researchgate.net/profile/Alberto-Rocha-3"
+pronouns: <a href="https://www.researchgate.net/profile/Alberto-Rocha-3">Alberto-Rocha-3</a>
 email: "arocha@ipma.pt"
 #twitter: .|.
 github: AJSRocha
 #linkedin: .|.
 date: "`r format(Sys.time(), '%B %Y')`"
-aboutme: "https://www.researchgate.net/profile/Alberto-Rocha-3"
+#aboutme: "https://www.researchgate.net/profile/Alberto-Rocha-3"
 output:
   vitae::markdowncv:
     theme: kjhealy
@@ -29,16 +29,14 @@ library(vitae)
 library(tibble)
 tribble(
   ~ Degree, ~ Year, ~ Institution, ~ Where,
-  "Técnico Superior", "2019 - Presente", "Instituto Português do Mar e da Atmosfera", "Matosinhos, Portugal",
-  "Bolseiro Técnico de Investigação - Nível 1", "2014 - 2019", "Instituto Português do Mar e da Atmosfera", "Matosinhos, Portugal",
+  "Técnico Superior", "2019 Presente", "Instituto Português do Mar e da Atmosfera", "Matosinhos, Portugal",
+  "Bolseiro Técnico de Investigação - Nível 1", "2014-2019", "Instituto Português do Mar e da Atmosfera", "Matosinhos, Portugal",
   "Bolseiro de Apoio Técnico - Nível 2", "2009-2014", "Instituto Português do Mar e da Atmosfera", "Matosinhos, Portugal",
   "Estagiário (MSc)", "2008", "Instituto Português do Mar e da Atmosfera", "Matosinhos, Portugal",
   "Estagiário (Lic)", "2007", "Instituto Português do Mar e da Atmosfera", "Matosinhos, Portugal",
 ) %>%
   detailed_entries(Degree, Where, Institution, Year)
 ```
-
-## Competências
 
 ## Habilitações Literárias
 
@@ -55,14 +53,13 @@ tribble(
 
 ## Formações
 
-Falta STCW
-
 ```{r}
 tribble(
   ~ Year, ~ Title, ~ Institution, ~ Local,
   2024, "Avaliação de Recursos Marinhos", "Instituto Português do Mar e da Atmosfera", "Olhão, Portugal",
   2023, "Introduction to Bayesian statistics", "Centro Interdisciplinar de Investigação Marinha e Ambiental", "Matosinhos, Portugal",
   2021, "MS Access - base de dados (inicial), 2º edição", "Gabinete de Planeamento, Políticas e Administração Geral", "Online",
+  2021, "Curso de Segurança Básica (STCW)", "Centro de Formação Profissional das Pescas e do Mar", "Matosinhos, Portugal", 
   2019, "CAL-AQUA - Curso de Ciências de Animais Aquáticos de Laboratório", "Centro Interdisciplinar de Investigação Marinha e Ambiental", "Matosinhos, Portugal",
   2019, "Formação sobre identificação de aves marinhas", "Instituto Português do Mar e da Atmosfera (coordernado por investigadores das Universidades do Minho e Lisboa", "Algés, Portugal",
   2018, "Estatística Espacial em R", "Instituto Português do Mar e da Atmosfera e Sociedade Portuguesa para o Estudo de Aves", "Algés, Portugal",
@@ -88,10 +85,10 @@ tribble(
 
 ```{r}
 library(dplyr)
-knitr::write_bib(c("vitae", "tibble"), "packages.bib")
+# knitr::write_bib(c("vitae", "tibble"), "Publicacoes.bib")
 
-bibliography_entries("packages.bib") %>%
-  arrange(desc(author$family), issued)
+bibliography_entries("Publicacoes.bib") %>% 
+  arrange(desc(issued), desc(author), issued)
 ```
 
 ## Campanhas
