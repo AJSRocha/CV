@@ -12,7 +12,7 @@ experiencia = tribble(
        "Participação em campanhas de investigação",
        "Metodologias de avaliação de \\textit{stock}: CATDYN, SPiCT, JABBA, CMSY++"),
  
-  "Bols. Técnico de Investigação - Nível 1", "2014-2019", "Instituto Português do Mar e da Atmosfera", "Matosinhos, Portugal",
+  "Bolseiro Técnico de Investigação - Nível 1", "2014-2019", "Instituto Português do Mar e da Atmosfera", "Matosinhos, Portugal",
   list("Projectos: PNAB/DCF, PPCENTRO",
        "Análise de dados dos stocks de lulas e potas",
        "Resposta a \\textit{datacalls} relativos a cefalópodes e triglídeos",
@@ -21,14 +21,14 @@ experiencia = tribble(
        "Embarques na frota comercial",
        "Participação em campanhas de investigação"),
        
-  "Bols. de Apoio Técnico - Nível 2", "2009-2014", "Instituto Português do Mar e da Atmosfera", "Matosinhos, Portugal",
+  "Bolseiro de Apoio Técnico - Nível 2", "2009-2014", "Instituto Português do Mar e da Atmosfera", "Matosinhos, Portugal",
   list("Projectos: PNAB/DCF",
        "Resposta a \\textit{datacalls} relativos a triglídeoss",
        "Amostragem biológica de cefalópodes",
        "Amostragem em lota",
        "Embarques na frota comercial",
        "Participação em campanhas de investigação"),
-  "Estagiário (MSc)", "2008", "Instituto Português do Mar e da Atmosfera", "Matosinhos, Portugal",
+  "Aluno (MSc)", "2008", "Instituto Português do Mar e da Atmosfera", "Matosinhos, Portugal",
   list("Amostragem em lota",
        "Amostragem biológica e estudo de crescimento com base em otólitos de \\textit{Chelidonhychtys lucerna}"),
   "Estagiário (Lic)", "2007", "Instituto Português do Mar e da Atmosfera", "Matosinhos, Portugal",
@@ -37,14 +37,21 @@ experiencia = tribble(
 )
 
 competencias = tribble(
-  ~item,
-  list("Office: Word, Excel, Powerpoint e Access",
-       "Domínio de SQL, R e Python",
-       "Experiência com \\textit{workflow} de git e Zotero",
-       "Modelação matemática de \textit{stocks}: CATDYN, SPiCT, JABBA, CMSY++",
-       "Amostragem biológica de teleósteos e cefalópodes",
-       "Amostragem em lota",
-       "Embarques na frota comercial"))
+  ~cat1, ~cat2, ~item,
+    "Informática", "Software", 
+  list("Word, Excel, Powerpoint", "Access","git","Zotero"),
+  "Programação", "Linguagens",
+       list("SQL", "R", "Python"),
+ "Estatística", "Modelação matemática",
+        list("Aplicada a \\textit{stocks} pesqueiros: CATDYN, SPiCT, JABBA, CMSY++"),
+  "Biologia Pesqueira", "Amostragem",     
+       list("Biológica de teleósteos e cefalópodes",
+       "Identificação espécies comerciais e comprimentos em lota",
+       "Embarques na frota comercial",
+       "Partipação em campanhas de investigação"),
+ "Certificações", "em",
+        list("Carta de condução tipo B","STCW", "CAL-AQUA")
+ )
 
 habilit = tribble(
   ~ Degree, ~ Year, ~ Institution, ~ Where, ~Detail,
@@ -80,7 +87,7 @@ formacoes = tribble(
 
 lista = list()
 for(i in 1:nrow(formacoes)){
-  lista[[i]] = list(formacoes$Year[i], formacoes$Institution[i], formacoes$Local[i])
+  lista[[i]] = list(formacoes$Institution[i], formacoes$Local[i])
 }
 formacoes$sum = lista
 
@@ -89,7 +96,7 @@ campanhas = tribble(
   "Março 2024", "Campanha de rastreio acústico para pequenos pelágicos. Divisão IXa do ICES", "N/I Miguel Oliver/SGM", "Projecto PNAB/DCF",
   "Dezembro 2023", "Campanha de investigação demersal de Outono", "N/I Mário Ruivo/IPMA", "Projecto PNAB/DCF",
   "Outubro 2022", "Campanha de investigação demersal de Outono", "N/I Mário Ruivo/IPMA", "Projecto PNAB/DCF",
-  "Fevereiro 2022" , "Campanha do método de produção diária de ovos. Divisão IXa do ICES", "N/I Vizconde de Eza/SGM", "Projecto PNAB/DCF",
+  "Fevereiro 2022" , "Campanha do método de produção diária de ovos. Divisão IXa do ICES", "N/I Vizconde de Eza/IEO", "Projecto PNAB/DCF",
   "Outubro 2021" ,"Campanha de investigação demersal de Outono" , "N/I Mário Ruivo/IPMA", "Projecto PNAB/DCF",
   "Fevereiro 2019" ,"Campanha do método de produção diária de ovos. Divisão IXa do ICES", "N/I Noruega/IPMA", "Projecto PNAB/DCF",
   "Outubro 2018" , "Campanha de investigação demersal de Outono","N/I Noruega/IPMA", "Projecto PNAB/DCF",
@@ -104,8 +111,8 @@ campanhas = tribble(
   "Março/Abril 2015", "Campanha de rastreio acústico para pequenos pelágicos e Campanha do método de produção diária de ovos. Divisão IXa do ICES", "N/I Noruega/IPMA", "Projecto PNAB/DCF",
   "Outubro 2014" , "Campanha de investigação demersal de Outono. Divisão IXa do ICES", "N/I Noruega/IPIMAR", "Projecto PNAB/DCF",
   "Março/Abril 2014" , "Campanha de rastreio acústico para pequenos pelágicos e Campanha do método de produção diária de ovos. Divisão IXa do ICES", "N/I Noruega/IPMA", "Projecto PNAB/DCF",
-  "Junho/Julho 2013" , "Campanha de Investigação Pesqueira Flemish Cap","N/I Vizconde de Eza/SGM", "Projecto PNAB/DCF",
+  "Junho/Julho 2013" , "Campanha de Investigação Pesqueira Flemish Cap","N/I Vizconde de Eza/IEO", "Projecto PNAB/DCF",
   "Outubro 2010" , "Campanha de investigação demersal de Outono. Divisão IXa do ICES", "N/I Noruega/IPIMAR", "Projecto PNAB/DCF",
-  "Junho/Julho 2009" , "Campanha de Investigação Pesqueira Flemish Cap", "N/I Vizconde de Eza/SGM", "Projecto PNAB/DCF",
+  "Junho/Julho 2009" , "Campanha de Investigação Pesqueira Flemish Cap", "N/I Vizconde de Eza/IEO", "Projecto PNAB/DCF",
   "Outubro 2007" , "Campanha de Prospecção de Bancos de Moluscos Bivalves","N/I Tellina/IPIMAR"," Projecto PNAB/DCF"
 )

@@ -20,7 +20,7 @@ library(vitae)
 source('data.r')
 ```
 
-## Experiência Profissional
+# Experiência Profissional
 
 ```{r}
 library(tibble)
@@ -29,15 +29,7 @@ experiencia  %>%
                    .protect = F)
 ```
 
-## Competencias
-
-```{r}
-library(tibble)
-competencias  %>%
-  detailed_entries(why = item)
-```
-
-## Habilitações Literárias
+# Habilitações Literárias
 
 ```{r, include = T}
 library(tibble)
@@ -45,7 +37,24 @@ habilit %>%
   detailed_entries(Institution, Year, Degree, Where, Detail)
 ```
 
-## Formações
+# Competências
+
+<!-- * Office: Word, Excel, Powerpoint e Access -->
+<!-- * Domínio de SQL, R e Python -->
+<!-- * Experiência com *workflow* de git e Zotero -->
+<!-- * Modelação matemática de \textit{stocks}: CATDYN, SPiCT, JABBA, CMSY++ -->
+<!-- * Amostragem biológica de teleósteos e cefalópodes -->
+<!-- * Amostragem em lota -->
+<!-- * Embarques na frota comercial -->
+
+```{r, include = T}
+library(tibble)
+competencias  %>%
+  detailed_entries(what = cat2, with = cat1, why = item, where = "", .protect = F)
+```
+
+\pagebreak
+# Formações
 
 ```{r, include = TRUE}
 formacoes %>%
@@ -55,10 +64,11 @@ formacoes %>%
   #   Desc
   # )
   #what, when, with, where, why
-  detailed_entries(Title, why = sum, .protect = F)
+  detailed_entries(Year, with = Title, why = sum, .protect = F)
 ```
 
-## Publicações
+\pagebreak
+# Publicações
 
 ```{r, include = T}
 library(dplyr)
@@ -68,7 +78,8 @@ bibliography_entries("Publicacoes.bib") %>%
   arrange(desc(issued), desc(author), issued)
 ```
 
-## Campanhas
+\pagebreak
+# Campanhas de Investigação
 
 ```{r, include = TRUE}
 campanhas %>%
