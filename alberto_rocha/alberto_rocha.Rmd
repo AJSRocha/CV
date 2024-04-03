@@ -1,21 +1,17 @@
 ---
 title: CV
-name: "Alberto"
-surname: Jorge Machado de Almeida de Sousa Rocha
-position: "Técnico Superior"
+name: \Large Alberto
+surname: \Large Jorge Machado de Almeide de Sousa Rocha
+position: \Large Técnico Superior
 address: "Instituto Português do Mar e da Atmosfera"
 phone: 915578419
-#pronouns: "he/him"
-pronouns: <a href="https://www.researchgate.net/profile/Alberto-Rocha-3">Alberto-Rocha-3</a>
 email: "arocha@ipma.pt"
-#twitter: .|.
 github: AJSRocha
-#linkedin: .|.
 date: "`r format(Sys.time(), '%B %Y')`"
-#aboutme: "https://www.researchgate.net/profile/Alberto-Rocha-3"
+www: researchgate.net/profile/Alberto-Rocha-3
 output:
-  vitae::markdowncv:
-    theme: kjhealy
+  vitae::moderncv:
+    theme: banking
 ---
 
 ```{r setup, include=FALSE}
@@ -29,55 +25,42 @@ source('data.r')
 ```{r}
 library(tibble)
 experiencia  %>%
-  detailed_entries(Degree, Where, Institution, Year, why = Detail)
+  detailed_entries(Institution, Year, Degree, Where, why = Detail,
+                   .protect = F)
+```
+
+## Competencias
+
+```{r}
+library(tibble)
+competencias  %>%
+  detailed_entries(why = item)
 ```
 
 ## Habilitações Literárias
 
-```{r}
+```{r, include = T}
 library(tibble)
-tribble(
-  ~ Degree, ~ Year, ~ Institution, ~ Where,
-  "MSc. em Ciência de Dados", "2023", "Faculdade de Ciências da Universidade do Porto", "Porto, Portugal",
-  "MSc. em Ciências e Tecnologia do Ambiente", "2020", "Faculdade de Ciências da Universidade do Porto", "Porto, Portugal",
-  "Licenciatura em Ciências e Tecnologia do Ambiente", "2007", "Faculdade de Ciências da Universidade do Porto", "Porto, Portugal",
-) %>%
-  detailed_entries(Degree, Where, Institution, Year)
+habilit %>%
+  detailed_entries(Institution, Year, Degree, Where, Detail)
 ```
 
 ## Formações
 
-```{r}
-tribble(
-  ~ Year, ~ Title, ~ Institution, ~ Local,
-  2024, "Avaliação de Recursos Marinhos", "Instituto Português do Mar e da Atmosfera", "Olhão, Portugal",
-  2023, "Introduction to Bayesian statistics", "Centro Interdisciplinar de Investigação Marinha e Ambiental", "Matosinhos, Portugal",
-  2021, "MS Access - base de dados (inicial), 2º edição", "Gabinete de Planeamento, Políticas e Administração Geral", "Online",
-  2021, "Curso de Segurança Básica (STCW)", "Centro de Formação Profissional das Pescas e do Mar", "Matosinhos, Portugal", 
-  2019, "CAL-AQUA - Curso de Ciências de Animais Aquáticos de Laboratório", "Centro Interdisciplinar de Investigação Marinha e Ambiental", "Matosinhos, Portugal",
-  2019, "Formação sobre identificação de aves marinhas", "Instituto Português do Mar e da Atmosfera (coordernado por investigadores das Universidades do Minho e Lisboa", "Algés, Portugal",
-  2018, "Estatística Espacial em R", "Instituto Português do Mar e da Atmosfera e Sociedade Portuguesa para o Estudo de Aves", "Algés, Portugal",
-  2018, "Análise de dados geográficos (Módulo 3 do Curso de Análise de dados com R)", "Instituto Superior de Agronomia", "Algés, Portugal",
-  2017, "Acção de formação sobre a plataforma de base de dados do PNAB", "Instituto Português do Mar e da Atmosfera", "Matosinhos, Portugal",
-  2017, "Workshop de Atribuição de estados de Maturação Macroscópicos a gónadas de peixes", "Instituto Português do Mar e da Atmosfera", "Matosinhos, Portugal",
-  2016, "Pós-Graduação em Estatística com R aplicada às Ciências Biológicas", "Instituto Superior de Agronomia", "Lisboa, Portugal",
-  2015, "Workshop de Amostragem e Identificação de Espécies da costa portuguesa - WKAID", "Instituto Português do Mar e da Atmosfera", "Matosinhos, Portugal",
-  2015, "Workshop de Amostragem e Identificação de Espécies da costa portuguesa", "Instituto Português do Mar e da Atmosfera", "Algés, Portugal",
-  2014, "Curso Avançado de R", "WeValue", "Lisboa, Portugal",
-  2014, "Curso de Identificação de Aves e Mamíferos - Nível II", "Sociedade Portuguesa para o Estudo de Aves; Departamento de Biologia da Universidade de Aveiro", "Algés, Portugal)",
-  2011, "Marinheiro Nível 2 (Pescador) / Segurança e Sobrevivência no Mar", "Centro de Formação Profissional das Pescas e do Mar", "Lisboa, Portugal"
-) %>%
+```{r, include = TRUE}
+formacoes %>%
   # brief_entries(
   #   glue::glue("Nobel Prize in {Type}"),
   #   Year,
   #   Desc
   # )
-  detailed_entries( Title, Local, Institution, Year)
+  #what, when, with, where, why
+  detailed_entries(Title, why = sum, .protect = F)
 ```
 
 ## Publicações
 
-```{r}
+```{r, include = T}
 library(dplyr)
 # knitr::write_bib(c("vitae", "tibble"), "Publicacoes.bib")
 
@@ -87,36 +70,12 @@ bibliography_entries("Publicacoes.bib") %>%
 
 ## Campanhas
 
-```{r}
-tribble(
-  ~ Date, ~ Title, ~ Ship, ~ Projecto,
-"Março 2024", "Campanha de rastreio acústico para pequenos pelágicos. Divisão IXa do ICES", "N/I Miguel Oliver/SGM", "Projecto PNAB/DCF",
-"Dezembro 2023", "Campanha de investigação demersal de Outono", "N/I Mário Ruivo/IPMA", "Projecto PNAB/DCF",
-"Outubro 2022", "Campanha de investigação demersal de Outono", "N/I Mário Ruivo/IPMA", "Projecto PNAB/DCF",
-"Fevereiro 2022" , "Campanha do método de produção diária de ovos. Divisão IXa do ICES", "N/I Vizconde de Eza/SGM", "Projecto PNAB/DCF",
-"Outubro 2021" ,"Campanha de investigação demersal de Outono" , "N/I Mário Ruivo/IPMA", "Projecto PNAB/DCF",
-"Fevereiro 2019" ,"Campanha do método de produção diária de ovos. Divisão IXa do ICES", "N/I Noruega/IPMA", "Projecto PNAB/DCF",
-"Outubro 2018" , "Campanha de investigação demersal de Outono","N/I Noruega/IPMA", "Projecto PNAB/DCF",
-"Abril 2018", "Campanha de rastreio acústico para pequenos pelágicos. Divisão IXa do ICES", "N/I Noruega/IPMA", "Projecto PNAB/DCF",
-"Outubro 2017" , "Campanha de investigação demersal de Outono", "N/I Noruega/IPMA", "Projecto PNAB/DCF",
-"Julho 2017", "Campanha de investigação de Crustáceos. Divisão IXa do ICES", "N/I Noruega/IPIMAR", "Projecto PNAB/DCF",
-"Março/Abril 2017", "Campanha de rastreio acústico para pequenos pelágicos e Campanha do método de produção diária de ovos. Divisão IXa do ICES", "N/I Noruega/IPMA", "Projecto PNAB/DCF",
-"Julho 2016", "Campanha de investigação de Crustáceos. Divisão IXa do ICES", "N/I Noruega/IPIMAR", "Projecto PNAB/DCF",
-"Março/Abril 2016", "Campanha de rastreio acústico para pequenos pelágicos e Campanha do método de produção diária de ovos. Divisão IXa do ICES", "N/I Noruega/IPMA", "Projecto PNAB/DCF",
-"Outubro 2015", "Campanha de investigação demersal de Outono. Divisão IXa do ICES", "N/I Noruega/IPIMAR", "Projecto PNAB/DCF",
-"Junho 2015", "Campanha de investigação de Crustáceos. Divisão IXa do ICES", "N/I Noruega/IPIMAR", "Projecto PNAB/DCF",
-"Março/Abril 2015", "Campanha de rastreio acústico para pequenos pelágicos e Campanha do método de produção diária de ovos. Divisão IXa do ICES", "N/I Noruega/IPMA", "Projecto PNAB/DCF",
-"Outubro 2014" , "Campanha de investigação demersal de Outono. Divisão IXa do ICES", "N/I Noruega/IPIMAR", "Projecto PNAB/DCF",
-"Março/Abril 2014" , "Campanha de rastreio acústico para pequenos pelágicos e Campanha do método de produção diária de ovos. Divisão IXa do ICES", "N/I Noruega/IPMA", "Projecto PNAB/DCF",
-"Junho/Julho 2013" , "Campanha de Investigação Pesqueira Flemish Cap","N/I Vizconde de Eza/SGM", "Projecto PNAB/DCF",
-"Outubro 2010" , "Campanha de investigação demersal de Outono. Divisão IXa do ICES", "N/I Noruega/IPIMAR", "Projecto PNAB/DCF",
-"Junho/Julho 2009" , "Campanha de Investigação Pesqueira Flemish Cap", "N/I Vizconde de Eza/SGM", "Projecto PNAB/DCF",
-"Outubro 2007" , "Campanha de Prospecção de Bancos de Moluscos Bivalves","N/I Tellina/IPIMAR"," Projecto PNAB/DCF"
-) %>%
+```{r, include = TRUE}
+campanhas %>%
   # brief_entries(
   #   glue::glue("Nobel Prize in {Type}"),
   #   Year,
   #   Desc
   # )
-  detailed_entries( Title, Projecto, Ship, Date)
+  detailed_entries(Projecto,  Date, why = Title, Ship)
 ```
