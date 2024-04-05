@@ -58,23 +58,52 @@ competencias  %>%
 
 ```{r, include = TRUE}
 formacoes %>%
-  # brief_entries(
-  #   glue::glue("Nobel Prize in {Type}"),
-  #   Year,
-  #   Desc
-  # )
-  #what, when, with, where, why
   detailed_entries(Year, with = Title, why = sum, .protect = F)
 ```
 
 \pagebreak
-# Publicações
+# Artigos Científicos
 
 ```{r, include = T}
 library(dplyr)
-# knitr::write_bib(c("vitae", "tibble"), "Publicacoes.bib")
 
-bibliography_entries("Publicacoes.bib") %>% 
+bibliography_entries("bibliography/Papers.bib") %>% 
+  arrange(desc(issued), desc(author), issued)
+```
+
+# Relatórios
+
+```{r, include = T}
+library(dplyr)
+
+bibliography_entries("bibliography/Reports.bib") %>% 
+  arrange(desc(issued), desc(author), issued)
+```
+
+# Apresentações
+
+```{r, include = T}
+library(dplyr)
+
+bibliography_entries("bibliography/Presentations.bib") %>% 
+  arrange(desc(issued), desc(author), issued)
+```
+
+# Posters
+
+```{r, include = T}
+library(dplyr)
+
+bibliography_entries("bibliography/Posters.bib") %>% 
+  arrange(desc(issued), desc(author), issued)
+```
+
+# Dissertações
+
+```{r, include = T}
+library(dplyr)
+
+bibliography_entries("bibliography/Dissertations.bib") %>% 
   arrange(desc(issued), desc(author), issued)
 ```
 
@@ -83,10 +112,5 @@ bibliography_entries("Publicacoes.bib") %>%
 
 ```{r, include = TRUE}
 campanhas %>%
-  # brief_entries(
-  #   glue::glue("Nobel Prize in {Type}"),
-  #   Year,
-  #   Desc
-  # )
   detailed_entries(Projecto,  Date, why = Title, Ship)
 ```

@@ -30,7 +30,7 @@ experiencia = tribble(
        "Participação em campanhas de investigação"),
   "Aluno (MSc)", "2008", "Instituto Português do Mar e da Atmosfera", "Matosinhos, Portugal",
   list("Amostragem em lota",
-       "Amostragem biológica e estudo de crescimento com base em otólitos de \\textit{Chelidonhychtys lucerna}"),
+       "Amostragem biológica e estudo de crescimento com base em otólitos de \\textit{Chelidonichthys lucerna}"),
   "Estagiário (Lic)", "2007", "Instituto Português do Mar e da Atmosfera", "Matosinhos, Portugal",
   list("Amostragem em lota",
        "Desenvolvimento de metodologia para estimação de misturas de espécies de triglídeos em desembarques comerciais")
@@ -42,8 +42,8 @@ competencias = tribble(
   list("Word, Excel, Powerpoint", "Access","git","Zotero"),
   "Programação", "Linguagens",
        list("SQL", "R", "Python"),
- "Estatística", "Modelação matemática",
-        list("Aplicada a \\textit{stocks} pesqueiros: CATDYN, SPiCT, JABBA, CMSY++"),
+ "Modelação", "Avaliação de \\textit{stocks} pesqueiros",
+        list("CATDYN", "SPiCT", "JABBA", "CMSY++"),
   "Biologia Pesqueira", "Amostragem",     
        list("Biológica de teleósteos e cefalópodes",
        "Identificação espécies comerciais e comprimentos em lota",
@@ -56,9 +56,9 @@ competencias = tribble(
 habilit = tribble(
   ~ Degree, ~ Year, ~ Institution, ~ Where, ~Detail,
   "MSc. em Ciência de Dados [16 valores]", "2023", "Faculdade de Ciências da Universidade do Porto", "Porto, Portugal",
-  "Dissertação: A benchmark of stock assessment models for Octopus vulgaris in Portugal [17 valores]",
+  "Dissertação: A benchmark of stock assessment models for \\textit{Octopus vulgaris in Portugal} [17 valores]",
   "MSc. em Ciências e Tecnologia do Ambiente [16 valores]", "2020", "Faculdade de Ciências da Universidade do Porto", "Porto, Portugal",
-  "Dissertação: Caracterização dos desembarques de Chelidonichthys lucerna na costa ocidental Portuguesa [19 valores]",
+  "Dissertação: Caracterização dos desembarques de \\textit{Chelidonichthys lucerna} na costa ocidental Portuguesa [19 valores]",
   "Lic. em Ciências e Tecnologia do Ambiente [14 valores]", "2007", "Faculdade de Ciências da Universidade do Porto", "Porto, Portugal",
   "Relatório: Gestão de stocks pesqueiros com especial incidência no estudo de capturas de Ruivos e Cabras (Triglídeos) [19 valores]"
 )
