@@ -39,9 +39,9 @@ experiencia = tribble(
 competencias = tribble(
   ~cat1, ~cat2, ~item,
     "Informática", "Software", 
-  list("Word, Excel, Powerpoint", "Access","git","Zotero"),
+  list("Word, Excel, Powerpoint", "Access","git","Zotero","LaTeX"),
   "Programação", "Linguagens",
-       list("SQL", "R", "Python"),
+       list("SQL", "R", "Shiny","Python"),
  "Modelação", "Avaliação de \\textit{stocks} pesqueiros",
         list("CATDYN", "SPiCT", "JABBA", "CMSY++"),
   "Biologia Pesqueira", "Amostragem",     
