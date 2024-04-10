@@ -34,7 +34,7 @@ experiencia  %>%
 ```{r, include = T}
 library(tibble)
 habilit %>%
-  detailed_entries(Institution, Year, Degree, Where, Detail)
+  detailed_entries(Institution, Year, Degree, Where, Detail, .protect = F)
 ```
 
 # Competências
